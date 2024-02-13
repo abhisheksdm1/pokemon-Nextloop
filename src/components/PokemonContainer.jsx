@@ -14,6 +14,8 @@ const customStyles = {
   },
 };
 
+Modal.setAppElement("#root");
+
 export default function PokemonContainer({ url }) {
   const [pokemonInd, setPokemonInd] = useState(null);
   let subtitle;
@@ -31,6 +33,7 @@ export default function PokemonContainer({ url }) {
   function closeModal() {
     setIsOpen(false);
   }
+
   useEffect(() => {
     axios
       .get(url)
@@ -88,20 +91,17 @@ export default function PokemonContainer({ url }) {
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
-        contentLabel="Example Modal"
         style={customStyles}
+        contentLabel="Pokemon Modal"
       >
-        <div
-          className="w-80 bg-gray-200 flex flex-col items-center mb-3 p-4"
-          onClick={openModal}
-        >
+        <div className="w-80 bg-gray-200 flex flex-col items-center mb-3 p-4">
           {pokemonInd && (
             <img
               src={pokemonInd.sprites.front_default}
               alt="Pokemon"
               className="mx-auto"
-              width={100}
-              height={100}
+              width={200}
+              height={200}
             />
           )}
           {pokemonInd &&
@@ -134,20 +134,21 @@ export default function PokemonContainer({ url }) {
                 </div>
               ))}
           </div>
-          <h1>abilities</h1>
-          {/* <div className="flex ">
-            {pokemonInd.abilities.map((item, index) => (
-              <div key={index} className="flex m-2 justify-center">
-                <h1>{item.ability.name}</h1>
-              </div>
-            ))}
-          </div> */}
+          <h1>Abilities</h1>
+          <div className="flex">
+            {pokemonInd &&
+              pokemonInd.abilities.map((item, index) => (
+                <div key={index} className="flex m-2 justify-center">
+                  <h1>{item.ability.name}</h1>
+                </div>
+              ))}
+          </div>
         </div>
         <button
           className="bg-red-500 p-2 rounded text-white"
           onClick={closeModal}
         >
-          close
+          Close
         </button>
       </Modal>
     </div>
