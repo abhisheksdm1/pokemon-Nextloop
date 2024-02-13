@@ -135,13 +135,13 @@ export default function PokemonContainer({ url }) {
               ))}
           </div>
           <h1>abilities</h1>
-          <div className="flex ">
+          {/* <div className="flex ">
             {pokemonInd.abilities.map((item, index) => (
               <div key={index} className="flex m-2 justify-center">
                 <h1>{item.ability.name}</h1>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
         <button
           className="bg-red-500 p-2 rounded text-white"
