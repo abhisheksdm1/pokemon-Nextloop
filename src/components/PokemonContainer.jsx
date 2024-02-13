@@ -81,7 +81,9 @@ export default function PokemonContainer({ url }) {
               <div key={index} className="mr-4 mb-2">
                 <h1>
                   {stats.stat.name}:{" "}
-                  <span className="bg-green-300 ">{stats.base_stat}</span>
+                  <span className="bg-green-300 text-black-500">
+                    {stats.base_stat}
+                  </span>
                 </h1>
               </div>
             ))}
@@ -100,8 +102,8 @@ export default function PokemonContainer({ url }) {
               src={pokemonInd.sprites.front_default}
               alt="Pokemon"
               className="mx-auto"
-              width={200}
-              height={200}
+              width={100}
+              height={100}
             />
           )}
           {pokemonInd &&
@@ -126,10 +128,12 @@ export default function PokemonContainer({ url }) {
           <div className="mt-3 bg-blue-900 text-white flex flex-wrap justify-center p-2">
             {pokemonInd &&
               pokemonInd.stats.map((stats, index) => (
-                <div key={index} className="mr-4 mb-2">
+                <div key={index} className=" ">
                   <h1>
                     {stats.stat.name}:{" "}
-                    <span className="bg-green-300 ">{stats.base_stat}</span>
+                    <span className="bg-green-300 text-balck-500">
+                      {stats.base_stat}
+                    </span>
                   </h1>
                 </div>
               ))}
