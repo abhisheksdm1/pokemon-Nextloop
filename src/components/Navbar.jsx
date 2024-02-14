@@ -13,9 +13,6 @@ export default function Navbar() {
       .get(`https://pokeapi.co/api/v2/pokemon/${pokermon1}`)
       .then((response) => setPokemonI(response.data))
       .catch((error) => console.error("Error fetching data:", error));
-    const baseUrl = window.location.origin;
-    const newUrl = baseUrl + pokemon;
-    window.location.href = newUrl;
   }
 
   console.log("data", pokemonI);
