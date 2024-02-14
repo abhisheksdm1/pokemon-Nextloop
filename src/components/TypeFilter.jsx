@@ -20,7 +20,9 @@ export default function TypeFilter() {
 
   return (
     <div>
-      <div className="flex flex-wrap flex-row">
+      <div className="flex flex-wrap flex-row items-center m-5">
+        {/* mapping type list */}
+        <h1 className="bg-green-500">Pokemon Type Filter</h1>
         {typeList &&
           typeList.map(
             (

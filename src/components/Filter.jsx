@@ -3,7 +3,6 @@ import PokemonFil from "./PokemonFil";
 import PokemonContext from "../context/PokemonContext";
 
 export default function Filter() {
-  //   const [type, setType] = useState(null);
   const { type } = useContext(PokemonContext);
 
   return (

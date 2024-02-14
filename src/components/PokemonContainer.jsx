@@ -33,7 +33,7 @@ export default function PokemonContainer({ url }) {
   function closeModal() {
     setIsOpen(false);
   }
-
+  // fetch the individual pokemon
   useEffect(() => {
     axios
       .get(url)
@@ -43,10 +43,12 @@ export default function PokemonContainer({ url }) {
 
   return (
     <div className="">
+      {/* modal for whole container */}
       <div
         className="w-80 bg-gray-200 flex flex-col items-center mb-3 p-4"
         onClick={openModal}
       >
+        {/* fetching image */}
         {pokemonInd && (
           <img
             src={pokemonInd.sprites.front_default}
@@ -56,12 +58,14 @@ export default function PokemonContainer({ url }) {
             height={200}
           />
         )}
+        {/* fetching name of pokemon */}
         {pokemonInd &&
           pokemonInd.forms.map((form, index) => (
             <div key={index} className="mx-auto mt-3">
               <h1 className="text-2xl text-blue-700">{form.name}</h1>
             </div>
           ))}
+        {/* fetching type of pokemon */}
         <div className="flex items-center mt-3">
           <h1>Type:</h1>
           {pokemonInd &&
@@ -74,6 +78,7 @@ export default function PokemonContainer({ url }) {
               </div>
             ))}
         </div>
+        {/* fetching pokemon stat */}
         <h1 className="mt-5">Stats</h1>
         <div className="mt-3 bg-blue-900 text-white flex flex-wrap justify-center p-2">
           {pokemonInd &&
@@ -97,6 +102,7 @@ export default function PokemonContainer({ url }) {
         contentLabel="Pokemon Modal"
       >
         <div className="w-80 bg-gray-200 flex flex-col items-center mb-3 p-4">
+          {/* fetching image */}
           {pokemonInd && (
             <img
               src={pokemonInd.sprites.front_default}
@@ -106,12 +112,14 @@ export default function PokemonContainer({ url }) {
               height={100}
             />
           )}
+          {/*fetching name of pokemon   */}
           {pokemonInd &&
             pokemonInd.forms.map((form, index) => (
               <div key={index} className="mx-auto mt-3">
                 <h1 className="text-2xl text-blue-700">{form.name}</h1>
               </div>
             ))}
+          {/* fetching type of pokemon */}
           <div className="flex items-center mt-3">
             <h1>Type:</h1>
             {pokemonInd &&
@@ -124,6 +132,7 @@ export default function PokemonContainer({ url }) {
                 </div>
               ))}
           </div>
+          {/* fetching pokemon stat */}
           <h1 className="mt-5">Stats</h1>
           <div className="mt-3 bg-blue-900 text-white flex flex-wrap justify-center p-2">
             {pokemonInd &&
@@ -138,6 +147,7 @@ export default function PokemonContainer({ url }) {
                 </div>
               ))}
           </div>
+          {/* fetching pokemon ablities */}
           <h1>Abilities</h1>
           <div className="flex">
             {pokemonInd &&

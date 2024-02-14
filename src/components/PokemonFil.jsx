@@ -2,8 +2,6 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import PokemonContainer from "./PokemonContainer";
-// import PokemonContainer from "./PokemonContainer";
-// import PokemonContainer from "./PokemonContainer";
 
 export default function PokemonFil({ url }) {
   const [pokemonData, setPokemonData] = useState([]);

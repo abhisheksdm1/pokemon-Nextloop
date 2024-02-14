@@ -11,8 +11,11 @@ function App() {
 
   return (
     <>
+      {/* serch Navbaar */}
       <Navbar />
+      {/*Pokemon type List */}
       <TypeFilter />
+      {/* PokemonDisplay is like list of pokemon anf Filter is filte by type pokemon */}
       {type == null ? <PokemonDisplay /> : <Filter />}
     </>
   );

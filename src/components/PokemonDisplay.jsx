@@ -22,9 +22,10 @@ export default function PokemonDisplay() {
   const [nextPageUrl, setNextPageUrl] = useState(null);
   const [prevPageUrl, setPrevPageUrl] = useState(null);
   const { pokemon, pokemonI } = useContext(PokemonContext);
-  const fetchPokemonList = async (url) => {
+  const fetchPokemonList = async () => {
+    const key = import.meta.env.VITE_KEY;
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(key);
       setPokemonList(response.data.results);
       setNextPageUrl(response.data.next);
       setPrevPageUrl(response.data.previous);
@@ -32,11 +33,12 @@ export default function PokemonDisplay() {
       console.error("Error fetching Pokemon list:", error);
     }
   };
-
+  //  pokemon list url
   useEffect(() => {
-    fetchPokemonList("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20");
+    fetchPokemonList();
   }, []);
 
+  //
   const handleNextPage = async () => {
     if (nextPageUrl) {
       await fetchPokemonList(nextPageUrl);
@@ -66,6 +68,7 @@ export default function PokemonDisplay() {
   }
   return (
     <div>
+      {/* if search is empty then display main pokemon list */}
       {pokemon == "" ? (
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
