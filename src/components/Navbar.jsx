@@ -3,8 +3,7 @@ import PokemonContext from "../context/PokemonContext";
 import axios from "axios";
 
 export default function Navbar() {
-  const { pokemon, setPokemon, pokemonI, setPokemonI } =
-    useContext(PokemonContext);
+  const { pokemon, setPokemon, setPokemonI } = useContext(PokemonContext);
 
   function submitHandler() {
     const pokermon1 = pokemon;
@@ -15,8 +14,6 @@ export default function Navbar() {
       .catch((error) => console.error("Error fetching data:", error));
   }
 
-  console.log("data", pokemonI);
-  console.log("data1", pokemon);
   return (
     <div className="p-5 flex justify-center">
       <input
