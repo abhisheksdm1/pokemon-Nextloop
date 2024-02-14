@@ -22,10 +22,10 @@ export default function PokemonDisplay() {
   const [nextPageUrl, setNextPageUrl] = useState(null);
   const [prevPageUrl, setPrevPageUrl] = useState(null);
   const { pokemon, pokemonI } = useContext(PokemonContext);
-  const fetchPokemonList = async () => {
-    const key = import.meta.env.VITE_KEY;
+  const fetchPokemonList = async (url) => {
+    // const key = import.meta.env.VITE_KEY;
     try {
-      const response = await axios.get(key);
+      const response = await axios.get(url);
       setPokemonList(response.data.results);
       setNextPageUrl(response.data.next);
       setPrevPageUrl(response.data.previous);
@@ -35,7 +35,7 @@ export default function PokemonDisplay() {
   };
   //  pokemon list url
   useEffect(() => {
-    fetchPokemonList();
+    fetchPokemonList("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20");
   }, []);
 
   //
