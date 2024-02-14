@@ -42,7 +42,7 @@ export default function PokemonContainer({ url }) {
   }, [url]);
 
   return (
-    <div className="flex justify-center">
+    <div className="">
       <div
         className="w-80 bg-gray-200 flex flex-col items-center mb-3 p-4"
         onClick={openModal}
