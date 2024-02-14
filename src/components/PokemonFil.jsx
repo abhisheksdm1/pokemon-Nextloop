@@ -22,7 +22,7 @@ export default function PokemonFil({ url }) {
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
       {pokemonData.slice(0, 20).map((item, index) => (
-        <div key={index} className="ml-5 mr-5 ">
+        <div key={index} className="ml-5 mr-5 flex justify-center">
           <PokemonContainer url={item.pokemon.url} />
         </div>
       ))}

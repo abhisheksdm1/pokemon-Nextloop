@@ -73,7 +73,7 @@ export default function PokemonDisplay() {
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {pokemonList.map((pokemon, index) => (
-              <div key={index} className="ml-5 mr-5">
+              <div key={index} className="ml-5 mr-5 flex justify-center">
                 <PokemonContainer name={pokemon.name} url={pokemon.url} />
               </div>
             ))}
