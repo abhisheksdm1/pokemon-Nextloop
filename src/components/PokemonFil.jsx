@@ -7,7 +7,6 @@ import PokemonContainer from "./PokemonContainer";
 
 export default function PokemonFil({ url }) {
   const [pokemonData, setPokemonData] = useState([]);
-  console.log("aaaa", url);
 
   useEffect(() => {
     axios
@@ -21,8 +20,6 @@ export default function PokemonFil({ url }) {
         // Handle error if necessary
       });
   }, [url]);
-
-  console.log("pokemonData", pokemonData);
 
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 ">

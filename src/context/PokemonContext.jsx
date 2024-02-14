@@ -8,10 +8,11 @@ const PokemonContext = createContext();
 export const PokemonProvider = ({ children }) => {
   const [pokemon, setPokemon] = useState("");
   const [pokemonI, setPokemonI] = useState("");
+  const [type, setType] = useState(null);
 
   return (
     <PokemonContext.Provider
-      value={{ pokemon, setPokemon, pokemonI, setPokemonI }}
+      value={{ pokemon, setPokemon, pokemonI, setPokemonI, type, setType }}
     >
       {children}
     </PokemonContext.Provider>
